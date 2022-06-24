@@ -4,7 +4,7 @@
       <div class="item">
         <img
           class="item__image"
-          src="../images/capa.png"
+          src="https://assets.zenvia.com/images/home/Banner-Zenvia-CI_PT.png"
           alt=""
         />
       </div>
