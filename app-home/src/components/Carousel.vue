@@ -1,25 +1,37 @@
 <template>
-  <el-carousel :interval="4000" height="350px" style="max-width: 3000px;"  arrow="always">
-    <el-carousel-item>
-      <div class="item">
-        <img
-          class="item__image"
-          src="../images/capa.png"
-          alt=""
-        />
-      </div>
-    </el-carousel-item>
-    <el-carousel-item>
-      <div class="item">
-        <img
-          class="item__image_zenvia"
-          src="https://zenvia-static.s3.amazonaws.com/zenvia_banner_v2.png"
-          alt=""
-        />
-      </div>
-    </el-carousel-item>
-  </el-carousel>
+  <my-carousel
+    :autoplay-delay="3000"
+    autoplay
+    @change-slide="onChangeSlide"
+  >
+    <img
+      class="item__image"
+      src="https://assets.zenvia.com/images/home/Banner-Zenvia-CI_PT.png"
+      alt=""
+    />
+
+    <img
+      class="item__image_zenvia"
+      src="https://zenvia-static.s3.amazonaws.com/zenvia_banner_v2.png"
+      alt=""
+    />
+  </my-carousel>
 </template>
+
+<script>
+export default {
+  setup() {
+    const onChangeSlide = (event) => {
+      console.log('slide:', event.detail);
+    }
+  
+    return {
+      onChangeSlide
+    }
+  }
+}
+</script>
+
 <style>
 .item {
   position: relative;
